@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -55,17 +51,14 @@ namespace AspNetStarter
 
 
             services.AddOptions();
-            services.Configure<WowzaConfig>(Configuration.GetSection("WowzaConfig"));
+            services.Configure<SomeConfig>(Configuration.GetSection("SomeConfig"));
             services.AddSingleton<IConfiguration>(Configuration);
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
-            services.AddScoped<IStreamManagementService, StreamManagementService>();
-            services.AddScoped<IStreamRepository, StreamRepository>();
-            services.AddScoped<ILiveEventRepository, LiveEventRepository>();
-
+            services.AddScoped(typeof (IGenericRepository<>), typeof (GenericRepository<>));
 
         }
 

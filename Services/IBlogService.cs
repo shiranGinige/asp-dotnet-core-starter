@@ -9,8 +9,8 @@ namespace AspNetStarter.Services
 {
     public interface IBlogService
     {
-        Task<string> CreateNewPost(string currentUserId,string name);
-        Task<BlogPost> Get(string postId);
+        Task CreateNewPost(string currentUserId,string title);
+        Task<BlogPost> Get(long postId);
 
     }
 }
