@@ -6,12 +6,16 @@ https://www.microsoft.com/net/core#macos
 
 $ dotnet build 
 
+
 ## EF Migrations 
 
 $ dotnet ef migrations add "initial"
+
 $ dotnet ef database update 
+
 
 ## Run 
 
 $ dotnet run 
+
  
