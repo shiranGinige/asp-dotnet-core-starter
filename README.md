@@ -1,6 +1,6 @@
 ## Install DotNet Core
 
-https://www.microsoft.com/net/core#macos 
+https://www.microsoft.com/net/core
 
 ## Build 
 
@@ -18,4 +18,4 @@ $ dotnet ef database update
 
 $ dotnet run 
 
- 
+
